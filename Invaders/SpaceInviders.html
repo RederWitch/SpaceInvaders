@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>SpaceInvaders</title>
+    <style>
+        /*fullscreen canvas, no scrollbars*/
+        body, html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        /*background style*/
+        #starfield{
+            width:100%;
+            height:100%;
+            z-index: -1;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        /*place for SI style*/
+    </style>
+    <!--*including js -->
+    <script src="js/starfield2.js"></script>
+    <script src="js/spaceinvaders.js"></script>
+    <script src="js/Ship.js"></script>
+    <script src="js/Alien.js"></script>
+    <script src="js/Bullet.js"></script>
+</head>
+
+
+<body>
+    <!--place for SI HTML -->
+    <!-- background HTML -->
+    <div id = "starfield"></div>
+
+    <script>
+        /* place for JS*/
+        // creation of background
+        var container = document.getElementById('starfield');
+        var starfield = new Starfield();
+        starfield.initialise(container);
+        starfield.start();
+
+        var GameSpace = new Game(800,600);
+        GameSpace.setUp();
+        GameSpace.start();
+    </script>
+</body>
+
+
+</html>
